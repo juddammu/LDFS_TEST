@@ -9,6 +9,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 @Controller
 public class UserController {
     @Autowired
@@ -21,13 +24,26 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user, BindingResult result) {
 
-        System.out.println("이름 : "+user.getFirstName()+user.getLastName());
+
+        @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("user") User user, BindingResult result) throws MalformedURLException {
+
+            Test test = new Test();
+
+            String price = (user.getPrice());
+            String nation = (user.getNation());
+            Test client = new Test();
+            URL url = new URL("http://www.google.com/ig/calculator?hl=KR&q="+ price + nation + "=?KRW");
+            //URL url = new URL(" http://www.google.com/ig/calculator?hl=KR&q=1USD=?KRW");
+            client.sendData(user,url);
+
+
+        System.out.println("이름 : " + user.getFirstName() + user.getLastName());
         userRepository.save(user);
         return "redirect:/";
     }
+
 
     @RequestMapping("/delete/{userId}")
     public String deleteUser(@PathVariable("userId") Long userId) {

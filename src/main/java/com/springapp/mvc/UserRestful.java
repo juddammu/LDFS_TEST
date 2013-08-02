@@ -56,6 +56,9 @@ public class UserRestful {
         userResponse.setFirstName(user.getFirstName());
         userResponse.setLastName(user.getLastName());
         userResponse.setEmail(user.getEmail());
+        userResponse.setPrice(user.getPrice());
+        userResponse.setNation(user.getNation());
+        userResponse.setExchange(user.getExchange());
 
         return userResponse;
     }

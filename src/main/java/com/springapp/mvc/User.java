@@ -30,6 +30,15 @@ public class User implements Serializable {
     @Basic
     private String email;
 
+    @Basic
+    private String price;
+
+    @Basic
+    private String nation;
+
+    @Basic
+    private String exchange;
+
     /**
      * Gets id.
      *
@@ -101,5 +110,29 @@ public class User implements Serializable {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public String getExchange() {
+        return exchange;
+    }
+
+    public void setExchange(String exchange) {
+        this.exchange = exchange;
     }
 }

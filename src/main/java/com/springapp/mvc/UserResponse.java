@@ -38,6 +38,16 @@ public class UserResponse extends UserBaseWrapper {
     private String email;
 
     @XmlElement
+    private String price;
+
+    @XmlElement
+    private String nation;
+
+    @XmlElement
+    private String exchange;
+
+
+    @XmlElement
     @XmlElementWrapper
     private List<User> users;
 
@@ -87,5 +97,29 @@ public class UserResponse extends UserBaseWrapper {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public String getExchange() {
+        return exchange;
+    }
+
+    public void setExchange(String exchange) {
+        this.exchange = exchange;
     }
 }

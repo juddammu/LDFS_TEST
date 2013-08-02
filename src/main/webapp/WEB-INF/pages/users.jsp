@@ -44,6 +44,23 @@
                 </div>
             </div>
             <div class="control-group">
+                <form:label cssClass="control-label" path="nation">국가:</form:label>
+                 <div class="controls">
+                    <select name = "nation">
+                        <option value="USD">미국</option>
+                        <option value="AUD">호주</option>
+                        <option value="GBP">영국</option>
+                    </select>
+                 </div>
+            </div>
+            <div class="control-group">
+                <form:label cssClass="control-label" path="price">가격:</form:label>
+                <div class="controls">
+                    <form:input path="price"/>
+                </div>
+            </div>
+
+            <div class="control-group">
                 <div class="controls">
                     <input type="submit" value="Add User" class="btn"/>
                     </form:form>
@@ -57,14 +74,20 @@
                     <tr>
                         <th>이름</th>
                         <th>이메일</th>
+                        <th>가격;</th>
+                        <th>국가;</th>
+                        <th>환율;</th>
                         <th>&nbsp;</th>
-                    </tr>
+                    </tr>                             
                     </thead>
                     <tbody>
                     <c:forEach items="${users}" var="user">
                         <tr>
                             <td>${user.firstName} ${user.lastName}</td>
                             <td>${user.email}</td>
+                            <td>${user.price}</td>
+                            <td>${user.nation}</td>
+                            <td>${user.exchange}</td>
                             <td>
                                 <form action="delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
                             </td>
