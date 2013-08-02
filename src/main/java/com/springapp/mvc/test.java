@@ -8,5 +8,5 @@ package com.springapp.mvc;
  * To change this template use File | Settings | File Templates.
  */
 public class test {
-
+   int a = 0;
 }
