@@ -18,7 +18,7 @@ import java.util.List;
  * Time: 오후 1:56
  * To change this template use File | Settings | File Templates.
  */
-public class Test {
+public class Exchange {
    int a = 0;
 
 

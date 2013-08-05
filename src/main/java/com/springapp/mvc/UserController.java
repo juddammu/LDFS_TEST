@@ -29,11 +29,11 @@ public class UserController {
         @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) throws MalformedURLException {
 
-            Test test = new Test();
+            Exchange  exchange = new Exchange();
 
             String price = (user.getPrice());
             String nation = (user.getNation());
-            Test client = new Test();
+            Exchange client = new Exchange();
             URL url = new URL("http://www.google.com/ig/calculator?hl=KR&q="+ price + nation + "=?KRW");
             //URL url = new URL(" http://www.google.com/ig/calculator?hl=KR&q=1USD=?KRW");
             client.sendData(user,url);
